@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 style="text-align: center">Calcolatore reddito annuo</h2>
+    <div style="display: flex; flex-direction: column; align-items: center">
+      <form id="redditoProfForm">
+        <label for="redditoInput">Inserisci il reddito annuale lordo del professionista:</label>
+        <input type="number" id="redditoProfInput" name="redditoInput" required />
+        <button type="submit">Invia</button>
+      </form>
+      <div id="redditoPro"></div>
+      &nbsp;
+      <form id="redditoArtForm">
+        <label for="redditoInput">Inserisci il reddito annuale lordo dell'artigiano:</label>
+        <input type="number" id="redditoArtInput" name="redditoInput" required />
+        <button type="submit">Invia</button>
+      </form>
+      <div id="redditoArt"></div>
+      &nbsp;
+      <form id="redditoComForm">
+        <label for="redditoInput">Inserisci il reddito annuale lordo del commerciante:</label>
+        <input type="number" id="redditoComInput" name="redditoInput" required />
+        <button type="submit">Invia</button>
+      </form>
+      <div id="redditoCom"></div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>

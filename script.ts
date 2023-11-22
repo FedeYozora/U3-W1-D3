@@ -1,3 +1,31 @@
+document.getElementById("redditoProfForm")!.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+  const redditoInput = document.getElementById("redditoProfInput")! as HTMLInputElement;
+  const redditoPro = document.getElementById("redditoPro")! as HTMLElement;
+  const redditoannuolordo = parseInt(redditoInput.value);
+
+  const Professionista = new Lavoratore(1, redditoannuolordo);
+  redditoPro.innerHTML = `<p>Il reddito annuo del professionista é di ${Professionista.getRedditoAnnuoNetto()}€</p>`;
+});
+document.getElementById("redditoArtForm")!.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+  const redditoInput = document.getElementById("redditoArtInput")! as HTMLInputElement;
+  const redditoArt = document.getElementById("redditoArt")! as HTMLElement;
+  const redditoannuolordo = parseInt(redditoInput.value);
+
+  const Artigiano = new Lavoratore(2, redditoannuolordo);
+  redditoArt.innerHTML = `<p>Il reddito annuo dell'artigiano é di ${Artigiano.getRedditoAnnuoNetto()}€</p>`;
+});
+document.getElementById("redditoComForm")!.addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+  const redditoInput = document.getElementById("redditoComInput")! as HTMLInputElement;
+  const redditoCom = document.getElementById("redditoCom")! as HTMLElement;
+  const redditoannuolordo = parseInt(redditoInput.value);
+
+  const Commerciante = new Lavoratore(3, redditoannuolordo);
+  redditoCom.innerHTML = `<p>Il reddito annuo del commerciante é di ${Commerciante.getRedditoAnnuoNetto()}€</p>`;
+});
+
 abstract class UtileTasse {
   protected codredd: number;
   protected redditoannuolordo: number;
@@ -54,21 +82,3 @@ class Lavoratore extends UtileTasse {
     return this.getUtileTasse() - this.getTasseIrpef() - this.getTasseInps();
   }
 }
-
-const Professionista = new Lavoratore(1, 100000);
-const Artigiano = new Lavoratore(2, 100000);
-const Commerciante = new Lavoratore(3, 100000);
-
-// Console.log dei redditi annuali in base al lavoro
-console.log(
-  "Reddito annuo netto del professionista: ",
-  Professionista.getRedditoAnnuoNetto()
-);
-console.log(
-  "Reddito annuo netto dell'artigiano: ",
-  Artigiano.getRedditoAnnuoNetto()
-);
-console.log(
-  "Reddito annuo netto del commerciante: ",
-  Commerciante.getRedditoAnnuoNetto()
-);
