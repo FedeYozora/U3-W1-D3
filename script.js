@@ -14,28 +14,28 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 document.getElementById("redditoProfForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the form from submitting normally
+    event.preventDefault();
     var redditoInput = document.getElementById("redditoProfInput");
     var redditoPro = document.getElementById("redditoPro");
     var redditoannuolordo = parseInt(redditoInput.value);
     var Professionista = new Lavoratore(1, redditoannuolordo);
-    redditoPro.innerHTML = "<p>Il reddito annuo del professionista \u00E9 di ".concat(Professionista.getRedditoAnnuoNetto(), "\u20AC</p>");
+    redditoPro.innerHTML = "<p>Il reddito annuo del professionista \u00E9 di ".concat(Professionista.getRedditoAnnuoNetto(), "\u20AC</p>\n                          <p> di cui: ").concat(Professionista.getTasseInps(), "\u20AC dovuti in tasse all'INPS</p>\n                          <p> e ").concat(Professionista.getTasseIrpef(), "\u20AC all'IRPEF</p>");
 });
 document.getElementById("redditoArtForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the form from submitting normally
+    event.preventDefault();
     var redditoInput = document.getElementById("redditoArtInput");
     var redditoArt = document.getElementById("redditoArt");
     var redditoannuolordo = parseInt(redditoInput.value);
     var Artigiano = new Lavoratore(2, redditoannuolordo);
-    redditoArt.innerHTML = "<p>Il reddito annuo dell'artigiano \u00E9 di ".concat(Artigiano.getRedditoAnnuoNetto(), "\u20AC</p>");
+    redditoArt.innerHTML = "<p>Il reddito annuo dell'artigiano \u00E9 di ".concat(Artigiano.getRedditoAnnuoNetto(), "\u20AC</p>\n                          <p> di cui: ").concat(Artigiano.getTasseInps(), "\u20AC dovuti in tasse all'INPS</p>\n                          <p> e ").concat(Artigiano.getTasseIrpef(), "\u20AC all'IRPEF</p>");
 });
 document.getElementById("redditoComForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the form from submitting normally
+    event.preventDefault();
     var redditoInput = document.getElementById("redditoComInput");
     var redditoCom = document.getElementById("redditoCom");
     var redditoannuolordo = parseInt(redditoInput.value);
     var Commerciante = new Lavoratore(3, redditoannuolordo);
-    redditoCom.innerHTML = "<p>Il reddito annuo del commerciante \u00E9 di ".concat(Commerciante.getRedditoAnnuoNetto(), "\u20AC</p>");
+    redditoCom.innerHTML = "<p>Il reddito annuo del commerciante \u00E9 di ".concat(Commerciante.getRedditoAnnuoNetto(), "\u20AC</p>\n                          <p> di cui: ").concat(Commerciante.getTasseInps(), "\u20AC dovuti in tasse all'INPS</p>\n                          <p> e ").concat(Commerciante.getTasseIrpef(), "\u20AC all'IRPEF</p>");
 });
 var UtileTasse = /** @class */ (function () {
     function UtileTasse(codredd, redditoannuolordo) {

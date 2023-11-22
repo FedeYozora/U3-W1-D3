@@ -1,29 +1,35 @@
 document.getElementById("redditoProfForm")!.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent the form from submitting normally
+  event.preventDefault();
   const redditoInput = document.getElementById("redditoProfInput")! as HTMLInputElement;
   const redditoPro = document.getElementById("redditoPro")! as HTMLElement;
   const redditoannuolordo = parseInt(redditoInput.value);
 
   const Professionista = new Lavoratore(1, redditoannuolordo);
-  redditoPro.innerHTML = `<p>Il reddito annuo del professionista é di ${Professionista.getRedditoAnnuoNetto()}€</p>`;
+  redditoPro.innerHTML = `<p>Il reddito annuo del professionista é di ${Professionista.getRedditoAnnuoNetto()}€</p>
+                          <p> di cui: ${Professionista.getTasseInps()}€ dovuti in tasse all'INPS</p>
+                          <p> e ${Professionista.getTasseIrpef()}€ all'IRPEF</p>`;
 });
 document.getElementById("redditoArtForm")!.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent the form from submitting normally
+  event.preventDefault();
   const redditoInput = document.getElementById("redditoArtInput")! as HTMLInputElement;
   const redditoArt = document.getElementById("redditoArt")! as HTMLElement;
   const redditoannuolordo = parseInt(redditoInput.value);
 
   const Artigiano = new Lavoratore(2, redditoannuolordo);
-  redditoArt.innerHTML = `<p>Il reddito annuo dell'artigiano é di ${Artigiano.getRedditoAnnuoNetto()}€</p>`;
+  redditoArt.innerHTML = `<p>Il reddito annuo dell'artigiano é di ${Artigiano.getRedditoAnnuoNetto()}€</p>
+                          <p> di cui: ${Artigiano.getTasseInps()}€ dovuti in tasse all'INPS</p>
+                          <p> e ${Artigiano.getTasseIrpef()}€ all'IRPEF</p>`;
 });
 document.getElementById("redditoComForm")!.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent the form from submitting normally
+  event.preventDefault();
   const redditoInput = document.getElementById("redditoComInput")! as HTMLInputElement;
   const redditoCom = document.getElementById("redditoCom")! as HTMLElement;
   const redditoannuolordo = parseInt(redditoInput.value);
 
   const Commerciante = new Lavoratore(3, redditoannuolordo);
-  redditoCom.innerHTML = `<p>Il reddito annuo del commerciante é di ${Commerciante.getRedditoAnnuoNetto()}€</p>`;
+  redditoCom.innerHTML = `<p>Il reddito annuo del commerciante é di ${Commerciante.getRedditoAnnuoNetto()}€</p>
+                          <p> di cui: ${Commerciante.getTasseInps()}€ dovuti in tasse all'INPS</p>
+                          <p> e ${Commerciante.getTasseIrpef()}€ all'IRPEF</p>`;
 });
 
 abstract class UtileTasse {
